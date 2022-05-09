@@ -16,6 +16,7 @@ import { LogoArgProgComponent } from './components/logo-arg-prog/logo-arg-prog.c
 import { PorfolioComponent } from './components/porfolio/porfolio.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { RedesSocialesComponent } from './components/redes-sociales/redes-sociales.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { RedesSocialesComponent } from './components/redes-sociales/redes-social
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
