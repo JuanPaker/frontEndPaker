@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AutenticacionService } from 'src/app/services/autenticacion.service';
@@ -9,37 +9,42 @@ import { AutenticacionService } from 'src/app/services/autenticacion.service';
   styleUrls: ['./inicio-sesion.component.css']
 })
 export class InicioSesionComponent implements OnInit {
-  form: FormGroup;
+  ngOnInit(): void {
+      
+  }
+  
+
+
+  form:FormGroup;
   constructor(private formBuilder:FormBuilder, private autenticacionService:AutenticacionService, private ruta:Router) { 
       this.form=this.formBuilder.group(
       {
-        email:['',[Validators.required, Validators.email]],
-        password:['',[Validators.required, Validators.minLength(8)]],
-        deviceInfo:this.formBuilder.group({
-          deviceId:[],
-          deviceType:[],
-          notificationToquen:[]
+        email:['juanmanuelpaker@gmail.com',[Validators.required, Validators.email]],
+        password:['argentinaprograma',[Validators.required, Validators.minLength(8)]],
+        //deviceInfo:this.formBuilder.group({
+        //  deviceId:[],
+        //  deviceType:[],
+        //  notificationToquen:[]
         })
       }
-     )
-    }
-  ngOnInit(): void {
-  }
-  
-  get Email(){
+  get Email()
+  {
       return this.form.get('email');
   }
 
-  get password()
+  get Password()
   {
     return this.form.get('password');
   }
 
-  onEnviar(event:Event){
+  OnEnviar(event: Event)
+  {
     event.preventDefault;
-    this.autenticacionService.InicioSesion(this.form.value).subscribe(data=>{
+    this.autenticacionService.InicioSesion(this.form.value).subscribe( (data: any)=> {
       console.log("DATA:" + JSON.stringify(data));
       this.ruta.navigate(['/porfolio']);
     })
   }
 }
+
+

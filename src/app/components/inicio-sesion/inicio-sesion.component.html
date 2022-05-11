@@ -1,5 +1,6 @@
 <h1 class="m-5">Iniciar sesión</h1>
-<form [formGroup] = "form" class ="m-5" (ngSubmit)="onEnviar($event)">
+<form [formGroup] = "form" class ="m-5" (ngSubmit)="OnEnviar($event)"> 
+<!--<form [formGroup] = "form" class ="m-5"> -->
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email</label>
       <input type="email" formControlName="email" 
@@ -17,13 +18,13 @@
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Contraseña</label>
       <input type="password" formControlName="password" 
-      [ngClass]="{'is-invalid': password?.errors && password?.touched, 'is-valid':password?.errors && password?.touched}"
+      [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid':Password?.errors && Password?.touched}"
       class="form-control" id="exampleInputPassword1">
-      <div *ngIf="password?.errors && password?.touched">
-        <p *ngIf="password?.hasError('required')" class="text-danger">
+      <div *ngIf="Password?.errors && Password?.touched">
+        <p *ngIf="Password?.hasError('required')" class="text-danger">
         La Contraseña es requerida.
       </p>
-      <p *ngIf="password?.errors?.['minlength']" class="text-danger">
+      <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
         La contraseña debe ser de 8 o mas caracteres.
       </p>
     </div>
