@@ -19,8 +19,8 @@ export class InicioSesionComponent implements OnInit {
   constructor(private formBuilder:FormBuilder, private autenticacionService:AutenticacionService, private ruta:Router) { 
       this.form=this.formBuilder.group(
       {
-        email:['juanmanuelpaker@gmail.com',[Validators.required, Validators.email]],
-        password:['argentinaprograma',[Validators.required, Validators.minLength(8)]],
+        email:['',[Validators.required, Validators.email]],
+        password:['',[Validators.required, Validators.minLength(8)]],
         //deviceInfo:this.formBuilder.group({
         //  deviceId:[],
         //  deviceType:[],
