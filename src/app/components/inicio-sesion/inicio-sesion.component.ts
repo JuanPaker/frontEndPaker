@@ -9,8 +9,9 @@ import { AutenticacionService } from 'src/app/services/autenticacion.service';
   styleUrls: ['./inicio-sesion.component.css']
 })
 export class InicioSesionComponent implements OnInit {
+ 
+ 
   ngOnInit(): void {
-      
   }
   
 
@@ -40,7 +41,7 @@ export class InicioSesionComponent implements OnInit {
   OnEnviar(event: Event)
   {
     event.preventDefault;
-    this.autenticacionService.InicioSesion(this.form.value).subscribe( (data: any)=> {
+    this.autenticacionService.InicioSesion(this.form.value).subscribe(data => {
       console.log("DATA:" + JSON.stringify(data));
       this.ruta.navigate(['/porfolio']);
     })
