@@ -41,6 +41,7 @@ export class InicioSesionComponent implements OnInit {
   OnEnviar(event: Event)
   {
     event.preventDefault;
+    console.log("Boton funcionando ")
     this.autenticacionService.InicioSesion(this.form.value).subscribe(data => {
       console.log("DATA:" + JSON.stringify(data));
       this.ruta.navigate(['/porfolio']);

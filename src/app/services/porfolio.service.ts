@@ -9,13 +9,13 @@ import { Observable, observable } from 'rxjs';
 })
 
 export class PorfolioService {
- // url:string="localhost:8080/new/persona";
+ url:string="localhost:8080/personas/traer/perfil";
   constructor(private http:HttpClient) { }
 
   obtenerDatos(): Observable<any>
   {
-    //return this.http.get<any>(this.url+"persona");
-    return this.http.get<any>('./assets/data.json');
+    return this.http.get<any>(this.url+"persona");
+    //return this.http.get<any>('');
   }
 
 }
